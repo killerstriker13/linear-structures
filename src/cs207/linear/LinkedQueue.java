@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * Queues implemented as linked structures.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Shibam Mukhopadhyay
  */
 public class LinkedQueue<T> implements Queue<T> {
   // +--------+----------------------------------------------------------
@@ -57,7 +57,14 @@ public class LinkedQueue<T> implements Queue<T> {
 
   @Override
   public void put(T val) throws Exception {
-    throw new Exception("Unimplemented");
+    Node<T> putNode = new Node<T>(val, null);
+    if (this.back == null){
+      this.back = putNode;
+      this.front = putNode;
+    } else {
+      this.back.next = putNode;
+      this.back = putNode;
+    }
   } // put(T)
 
   @Override
@@ -65,7 +72,9 @@ public class LinkedQueue<T> implements Queue<T> {
     if (this.isEmpty()) {
       throw new Exception("cannot get values from the empty queue");
     } // if empty
-    throw new Exception("Unimplemented");
+    T output = this.front.value;
+    this.front = this.front.next;
+    return output;
   } // get()
 
   @Override
