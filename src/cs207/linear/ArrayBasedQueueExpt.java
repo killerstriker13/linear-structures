@@ -4,6 +4,8 @@ package cs207.linear;
  * A very simple experiment with ArrayBasedQueues.
  *
  * @author Samuel A. Rebelsky.
+ * @author Shibam Mukhopadhyay
+ * @author Linda Jing
  */
 public class ArrayBasedQueueExpt {
   /**
